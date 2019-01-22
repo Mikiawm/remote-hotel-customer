@@ -50,6 +50,9 @@ namespace Remote_hotel_customer
 			// aapt resource value: 0x7f050001
 			public const int editText1 = 2131034113;
 			
+			// aapt resource value: 0x7f050004
+			public const int textView1 = 2131034116;
+			
 			// aapt resource value: 0x7f050000
 			public const int text_view = 2131034112;
 			

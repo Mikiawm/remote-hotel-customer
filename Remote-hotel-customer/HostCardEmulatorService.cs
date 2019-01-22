@@ -105,7 +105,7 @@ namespace Remote_hotel_customer
     };
 
         private static NdefRecord NDEF_URI = new NdefRecord(
-                NdefRecord.TnfWellKnown,
+                NdefRecord.TnfMimeMedia,
                 NdefRecord.RtdText.ToArray(),
                 NDEF_ID,
                 Encoding.UTF8.GetBytes("Hello world!")
@@ -124,7 +124,7 @@ namespace Remote_hotel_customer
             if (intent.HasExtra("ndefMessage"))
             {
                 NDEF_URI = new NdefRecord(
-                        NdefRecord.TnfWellKnown,
+                        NdefRecord.TnfMimeMedia,
                         NdefRecord.RtdText.ToArray(),
                         NDEF_ID,
                         Encoding.ASCII.GetBytes(intent.GetStringExtra("ndefMessage"))
