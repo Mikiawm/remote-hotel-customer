@@ -63,11 +63,26 @@ namespace Remote_hotel_customer
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int menu_settings = 2131165185;
+			// aapt resource value: 0x7f070006
+			public const int menu_settings = 2131165190;
 			
 			// aapt resource value: 0x7f070000
-			public const int textView = 2131165184;
+			public const int passwordEditLetter1 = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int passwordEditLetter2 = 2131165185;
+			
+			// aapt resource value: 0x7f070002
+			public const int passwordEditLetter3 = 2131165186;
+			
+			// aapt resource value: 0x7f070003
+			public const int passwordEditLetter4 = 2131165187;
+			
+			// aapt resource value: 0x7f070004
+			public const int setPasswordButton = 2131165188;
+			
+			// aapt resource value: 0x7f070005
+			public const int textView = 2131165189;
 			
 			static Id()
 			{
@@ -144,6 +159,9 @@ namespace Remote_hotel_customer
 			
 			// aapt resource value: 0x7f050002
 			public const int menu_settings = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int passwordEditText = 2131034115;
 			
 			static String()
 			{

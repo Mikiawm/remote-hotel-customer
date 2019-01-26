@@ -10,10 +10,11 @@ using Android.Text.Format;
 using Android.Views;
 using Android.Widget;
 using Android;
+using System.Globalization;
 
 namespace Remote_hotel_customer
 {
-	[Activity (Label = "MonoDroid BeamDemo", MainLauncher = true)]
+	[Activity (Label = "Remote-hotel-customer", MainLauncher = true)]
 	public class Beam : Activity, NfcAdapter.ICreateNdefMessageCallback, NfcAdapter.IOnNdefPushCompleteCallback
 	{
 		public Beam ()
@@ -23,7 +24,15 @@ namespace Remote_hotel_customer
 		
 		NfcAdapter mNfcAdapter;
 		TextView mInfoText;
-		private const int MESSAGE_SENT = 1;
+        EditText passwordEditLetter1;
+        EditText passwordEditLetter2;
+        EditText passwordEditLetter3;
+        EditText passwordEditLetter4;
+        Button setPasswordButton;
+        string passwordText;
+
+
+        private const int MESSAGE_SENT = 1;
 		
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
@@ -31,8 +40,47 @@ namespace Remote_hotel_customer
 			this.SetContentView (Resource.Layout.activity_main);
 
 			mInfoText = FindViewById <TextView> (Resource.Id.textView);
-			// Check for available NFC Adapter
-			mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
+            passwordEditLetter1 = FindViewById<EditText>(Resource.Id.passwordEditLetter1);
+            passwordEditLetter2 = FindViewById<EditText>(Resource.Id.passwordEditLetter2);
+            passwordEditLetter3 = FindViewById<EditText>(Resource.Id.passwordEditLetter3);
+            passwordEditLetter4 = FindViewById<EditText>(Resource.Id.passwordEditLetter4);
+            setPasswordButton = FindViewById<Button>(Resource.Id.setPasswordButton);
+            passwordEditLetter1.Click += (sender, e) =>
+            {
+                passwordEditLetter2.Text = "";
+                passwordEditLetter3.Text = "";
+                passwordEditLetter4.Text = "";
+                passwordEditLetter2.Enabled = false;
+                passwordEditLetter3.Enabled = false;
+                passwordEditLetter4.Enabled = false;
+            };
+            passwordEditLetter1.AfterTextChanged += (sender, e) =>
+            {
+                passwordEditLetter2.Enabled = true;
+                passwordEditLetter2.RequestFocus();
+            };
+            passwordEditLetter2.AfterTextChanged += (sender, e) =>
+            {
+                passwordEditLetter3.Enabled = true;
+                passwordEditLetter3.RequestFocus();
+            };
+            passwordEditLetter3.AfterTextChanged += (sender, e) =>
+            {
+                passwordEditLetter4.Enabled = true;
+                passwordEditLetter4.RequestFocus();
+            };
+            passwordEditLetter4.AfterTextChanged += (sender, e) =>
+            {
+                setPasswordButton.RequestFocus();
+            };
+            setPasswordButton.Click += (sender, e) =>
+            {
+                passwordText = passwordEditLetter1.Text + passwordEditLetter2.Text + passwordEditLetter3.Text + passwordEditLetter4.Text;
+                mInfoText.Text = passwordText;
+            };
+
+            // Check for available NFC Adapter
+            mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 
 			if (mNfcAdapter == null) {
 				mInfoText = FindViewById <TextView> (Resource.Id.textView);
@@ -48,21 +96,9 @@ namespace Remote_hotel_customer
 		public NdefMessage CreateNdefMessage (NfcEvent evt) 
 		{
 			DateTime time = DateTime.Now;
-			var text = ("Beam me up!\n\n" + 
-			               "Beam Time: " + time.ToString ("HH:mm:ss"));
+            var password = passwordText;
 			NdefMessage msg = new NdefMessage (
-			new NdefRecord[] { CreateMimeRecord (
-				"application/com.example.android.beam", Encoding.UTF8.GetBytes (text))
-			/**
-			* The Android Application Record (AAR) is commented out. When a device
-			* receives a push with an AAR in it, the application specified in the AAR
-			* is guaranteed to run. The AAR overrides the tag dispatch system.
-			* You can add it back in to guarantee that this
-			* activity starts when receiving a beamed message. For now, this code
-			* uses the tag dispatch system.
-			*/
-			//,NdefRecord.CreateApplicationRecord("com.example.android.beam")
-			});
+			new NdefRecord[] { NdefRecord.CreateTextRecord(CultureInfo.CurrentCulture.Name, password) });
 			return msg;
 		}
 		
@@ -125,10 +161,8 @@ namespace Remote_hotel_customer
 
 		public NdefRecord CreateMimeRecord (String mimeType, byte [] payload) 
 		{
-			byte [] mimeBytes = Encoding.UTF8.GetBytes (mimeType);
-			NdefRecord mimeRecord = new NdefRecord (
-				NdefRecord.TnfMimeMedia, mimeBytes, new byte [0], payload);
-			return mimeRecord;
+            NdefRecord textRecord = NdefRecord.CreateTextRecord("en", "Hello world");
+            return textRecord;
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)
