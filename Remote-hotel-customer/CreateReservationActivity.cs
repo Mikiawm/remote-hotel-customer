@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Remote_hotel_customer
 {
-    class MainActivity
+    class CreateReservationActivity
     {
     }
 }

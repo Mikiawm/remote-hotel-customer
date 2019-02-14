@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		        android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -40,7 +40,7 @@
 		android:layout_height="wrap_content"
 		android:layout_below="@id/passwordEditLetter4"
 		android:textSize="30sp"
-		android:text="Save password"
+		android:text="Set door password"
 		android:layout_width="match_parent" 
 		/>
 	<TextView

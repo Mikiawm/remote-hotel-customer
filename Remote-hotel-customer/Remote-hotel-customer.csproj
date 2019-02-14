@@ -71,9 +71,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateReservationActivity.cs" />
+    <Compile Include="LoginActivity.cs" />
+    <Compile Include="BeamActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Content Include="Resources\layout\beam_activity.axml" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <AndroidResource Include="Resources\layout\start_page.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
