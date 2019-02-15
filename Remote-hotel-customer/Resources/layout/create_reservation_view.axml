@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<TextView
+		android:text="Customer: Michal Sobanski"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2" />
+	<EditText
+		android:inputType="date"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Enter reservation date from"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/dateFrom" />
+	<EditText
+		android:inputType="date"
+		android:hint="Enter reservation date to"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/dateTo" />
+	<EditText
+		android:text=""
+		android:hint="Enter room number"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/roomNumber" />
+	<Button
+		android:text="Add reservation"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/createReservationButton" />
+	<Button
+		android:text="Back"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/backButton" />
+</LinearLayout>

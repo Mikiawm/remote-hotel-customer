@@ -12,7 +12,14 @@ using Android.Widget;
 
 namespace Remote_hotel_customer
 {
-    class MainActivity
+    public class ReservationViewModel
     {
+        public int? ReservationId { get; set; }
+
+        public string RoomNumber { get; set; }
+
+        public DateTime DateFrom { get; set; }
+
+        public DateTime DateTo { get; set; }
     }
 }

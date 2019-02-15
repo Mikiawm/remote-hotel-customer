@@ -72,13 +72,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateReservationActivity.cs" />
-    <Compile Include="LoginActivity.cs" />
     <Compile Include="BeamActivity.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Content Include="Resources\layout\beam_activity.axml" />
+    <Compile Include="DashboardActivity.cs" />
+    <Compile Include="ReservationListItemAdapter.cs" />
+    <Compile Include="ReservationViewModel.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="StartPageActivity.cs" />
+    <AndroidResource Include="Resources\layout\activity_main.axml" />
+    <Compile Include="ReservationData.cs" />
+    <Compile Include="ViewHolder.cs" />
+    <Content Include="Resources\layout\beam_activity.axml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <AndroidResource Include="Resources\layout\start_page.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dashboard.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\reservation_item_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\create_reservation_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -89,9 +103,6 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />

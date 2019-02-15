@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace Remote_hotel_customer
 {
-	[Activity (Label = "Remote-hotel-customer", MainLauncher = true)]
+	[Activity (Label = "Nfc-activity")]
 	public class BeamActivity : Activity, NfcAdapter.ICreateNdefMessageCallback, NfcAdapter.IOnNdefPushCompleteCallback
 	{
 		public BeamActivity ()
@@ -39,7 +39,7 @@ namespace Remote_hotel_customer
 			base.OnCreate (savedInstanceState);
 			this.SetContentView (Resource.Layout.activity_main);
 
-			mInfoText = FindViewById <TextView> (Resource.Id.textView);
+			mInfoText = FindViewById <TextView> (Resource.Id.addPasswordTextInfo);
             passwordEditLetter1 = FindViewById<EditText>(Resource.Id.passwordEditLetter1);
             passwordEditLetter2 = FindViewById<EditText>(Resource.Id.passwordEditLetter2);
             passwordEditLetter3 = FindViewById<EditText>(Resource.Id.passwordEditLetter3);
@@ -83,7 +83,7 @@ namespace Remote_hotel_customer
             mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 
 			if (mNfcAdapter == null) {
-				mInfoText = FindViewById <TextView> (Resource.Id.textView);
+				mInfoText = FindViewById <TextView> (Resource.Id.addPasswordTextInfo);
 				mInfoText.Text = "NFC is not available on this device.";
 			} else {
 				// Register callback to set NDEF message

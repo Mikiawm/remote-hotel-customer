@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:orientation="horizontal"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent"  
+    android:minWidth="25px"  
+    android:minHeight="25px"  
+    android:paddingBottom="4dp">  
+	<TextView
+		android:text="a"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="250px"  
+        android:layout_height="wrap_content"  
+        android:paddingLeft="10dp"
+		android:id="@+id/reservationRoomNumber" />
+	<TextView
+		android:text="a"
+		android:layout_toRightOf="@id/reservationRoomNumber"  
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="250px"
+		android:paddingLeft="10dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20px"
+		android:id="@+id/reservationDateFrom" />
+	<TextView
+		android:text="a"
+		android:layout_toRightOf="@id/reservationDateFrom"  
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="250px"
+		android:paddingLeft="10dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="20px"
+		android:id="@+id/reservationDateTo" />
+</RelativeLayout>

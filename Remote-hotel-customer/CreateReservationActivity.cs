@@ -12,7 +12,29 @@ using Android.Widget;
 
 namespace Remote_hotel_customer
 {
-    class CreateReservationActivity
+    [Activity(Label = "Create reservation")]
+    public class CreateReservationActivity : Activity
     {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Load the UI defined in Second.axml
+            SetContentView(Resource.Layout.create_reservation_view);
+
+            // Get a reference to the button
+            var createReservationButton = FindViewById<Button>(Resource.Id.createReservationButton);
+            var backButton = FindViewById<Button>(Resource.Id.backButton);
+
+            createReservationButton.Click += (sender, e) => {
+                var createReservationActivity = new Intent(this, typeof(CreateReservationActivity));
+                StartActivity(createReservationActivity);
+            };
+
+            backButton.Click += (sender, e) => {
+                var dashboard = new Intent(this, typeof(DashboardActivity));
+                StartActivity(dashboard);
+            };
+        }
     }
 }
