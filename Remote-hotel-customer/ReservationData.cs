@@ -31,19 +31,22 @@ namespace Remote_hotel_customer
             {
                 RoomNumber = "223",
                 DateFrom = DateTime.Now.AddDays(3),
-                DateTo = DateTime.Now.AddDays(5)
+                DateTo = DateTime.Now.AddDays(5),
+                Password = "XARC"
             });
             temp.Add(new ReservationViewModel()
             {
                 RoomNumber = "123",
                 DateFrom = DateTime.Now,
-                DateTo = DateTime.Now.AddDays(5)
+                DateTo = DateTime.Now.AddDays(5),
+                Password = "LOUC"
             });
             temp.Add(new ReservationViewModel()
             {
                 RoomNumber = "224",
                 DateFrom = DateTime.Now,
-                DateTo = DateTime.Now.AddDays(3)
+                DateTo = DateTime.Now.AddDays(3),
+                Password = "LRAQ"
             });
         }
     }

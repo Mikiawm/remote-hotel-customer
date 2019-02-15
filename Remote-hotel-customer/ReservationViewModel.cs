@@ -21,5 +21,7 @@ namespace Remote_hotel_customer
         public DateTime DateFrom { get; set; }
 
         public DateTime DateTo { get; set; }
+
+        public string Password { get; set; }
     }
 }

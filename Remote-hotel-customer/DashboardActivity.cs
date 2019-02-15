@@ -29,15 +29,10 @@ namespace Remote_hotel_customer
             //var reservations =  ["223", "123"];
             reservationsList.Adapter = new ReservationListItemAdapter(ReservationData.ReservationViewModels);
 
-            //reservationsList.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
-            //{
-            //    //Get our item from the list adapter
-            //    reservationsList.
-            //    var item = GetItemAtPosition(e.Position);
-
-            //    //Make a toast with the item name just to show it was clicked
-            //    Toast.MakeText(this, item.Name + " Clicked!", ToastLength.Short).Show();
-            //};
+            reservationsList.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+            {
+                Toast.MakeText(this, ReservationData.ReservationViewModels[args.Position].Password.ToString(), ToastLength.Short).Show();
+            };
 
             createReservationButton.Click += (sender, e) =>
             {

@@ -7,26 +7,26 @@
     android:minHeight="25px"  
     android:paddingBottom="4dp">  
 	<TextView
-		android:text="a"
+		android:text=""
 		android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="250px"  
+        android:layout_width="400px"  
         android:layout_height="wrap_content"  
         android:paddingLeft="10dp"
 		android:id="@+id/reservationRoomNumber" />
 	<TextView
-		android:text="a"
+		android:text=""
 		android:layout_toRightOf="@id/reservationRoomNumber"  
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="250px"
+		android:layout_width="350px"
 		android:paddingLeft="10dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="20px"
 		android:id="@+id/reservationDateFrom" />
 	<TextView
-		android:text="a"
+		android:text=""
 		android:layout_toRightOf="@id/reservationDateFrom"  
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="250px"
+		android:layout_width="350px"
 		android:paddingLeft="10dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="20px"
